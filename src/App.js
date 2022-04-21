@@ -1,9 +1,12 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import ViewCounter from './components/ViewCounter';
 import ViewText from './components/ViewText';
 
 function App() {
   const [count, setCount] = useState(0);
+  const name = useMemo(() => {
+    return {name: 'Karem'};
+  }, [])
 
   const counterHandler = () => {
     setCount((prev) => prev + 1);
@@ -13,7 +16,7 @@ function App() {
   return (
     <div className='App'>
       <ViewCounter num={count} increaseCount={counterHandler} />
-      <ViewText />
+      <ViewText text={name} />
     </div>
   );
 
