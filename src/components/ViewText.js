@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from './Text';
 
-const ViewText = ({ text }) => {
+const ViewText = ({ text, addAge }) => {
   console.log('view text component');
 
   const apiConnect = () => {
@@ -13,6 +13,7 @@ const ViewText = ({ text }) => {
 
   return (
     <div className='box'>
+      <button onClick={addAge}>Add Age</button>
       <p>the included text:</p>
       <Text>{text.name}</Text>
     </div>

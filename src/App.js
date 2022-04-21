@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import ViewCounter from './components/ViewCounter';
 import ViewText from './components/ViewText';
 
@@ -12,11 +12,15 @@ function App() {
     setCount((prev) => prev + 1);
   };
 
+  const ageHandler = useCallback(() => {
+    console.log('age');
+  }, []);
+
 
   return (
     <div className='App'>
       <ViewCounter num={count} increaseCount={counterHandler} />
-      <ViewText text={name} />
+      <ViewText text={name} addAge={ageHandler}/>
     </div>
   );
 
