@@ -10,12 +10,14 @@ const ViewText = ({ text, addAge }) => {
   };
 
   apiConnect();
+  
 
   return (
     <div className='box'>
       <button onClick={addAge}>Add Age</button>
       <p>the included text:</p>
       <Text>{text.name}</Text>
+      <Text>{text.age}</Text>
     </div>
   );
 };

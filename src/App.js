@@ -4,16 +4,25 @@ import ViewText from './components/ViewText';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [user, setUser] = useState({name: 'Karem'});
+  
   const name = useMemo(() => {
-    return {name: 'Karem'};
-  }, [])
+    return user;
+  }, [user])
 
   const counterHandler = () => {
     setCount((prev) => prev + 1);
   };
 
   const ageHandler = useCallback(() => {
-    console.log('age');
+    setUser((prev) => {
+      if(prev.age){
+        return prev;
+      }else{
+        return {...prev, age : 30};
+      }
+      
+    });
   }, []);
 
 
